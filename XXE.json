@@ -4,6 +4,7 @@
             "consolidate_passive_issues":true,
             "follow_redirections":true,
             "maintain_session":true,
+            "maximum_crawl_and_audit_time":0,
             "scan_accuracy":"minimise_false_negatives",
             "scan_speed":"thorough",
             "skip_ineffective_checks":false
@@ -297,42 +298,15 @@
                     "detection_methods":[
                         {
                             "enabled":true,
-                            "name":"Error messages"
-                        },
-                        {
-                            "enabled":true,
-                            "name":"Burp Collaborator"
+                            "name":"Boolean conditions"
                         },
                         {
                             "enabled":true,
                             "name":"Burp Infiltrator"
                         }
                     ],
-                    "enabled":true,
-                    "type_index":"0x00100700"
-                },
-                {
-                    "detection_methods":[],
                     "enabled":false,
-                    "type_index":"0x00100b00"
-                },
-                {
-                    "detection_methods":[
-                        {
-                            "enabled":true,
-                            "name":"String echo"
-                        },
-                        {
-                            "enabled":true,
-                            "name":"Time delays"
-                        },
-                        {
-                            "enabled":true,
-                            "name":"Burp Collaborator"
-                        }
-                    ],
-                    "enabled":false,
-                    "type_index":"0x00100c00"
+                    "type_index":"0x00100500"
                 },
                 {
                     "detection_methods":[],
@@ -390,12 +364,76 @@
                 {
                     "detection_methods":[],
                     "enabled":false,
-                    "type_index":"0x00100a00"
+                    "type_index":"0x00100b00"
+                },
+                {
+                    "detection_methods":[
+                        {
+                            "enabled":true,
+                            "name":"String echo"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"Time delays"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"Burp Collaborator"
+                        }
+                    ],
+                    "enabled":false,
+                    "type_index":"0x00100c00"
+                },
+                {
+                    "detection_methods":[
+                        {
+                            "enabled":true,
+                            "name":"Error messages"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"Burp Collaborator"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"Burp Infiltrator"
+                        }
+                    ],
+                    "enabled":true,
+                    "type_index":"0x00100700"
+                },
+                {
+                    "detection_methods":[
+                        {
+                            "enabled":true,
+                            "name":"Error messages"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"Boolean conditions"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"Burp Infiltrator"
+                        }
+                    ],
+                    "enabled":false,
+                    "type_index":"0x00100600"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00100800"
                 },
                 {
                     "detection_methods":[],
                     "enabled":false,
                     "type_index":"0x00100900"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00100a00"
                 },
                 {
                     "detection_methods":[
@@ -486,43 +524,6 @@
                     "type_index":"0x00100200"
                 },
                 {
-                    "detection_methods":[],
-                    "enabled":false,
-                    "type_index":"0x00100800"
-                },
-                {
-                    "detection_methods":[
-                        {
-                            "enabled":true,
-                            "name":"Boolean conditions"
-                        },
-                        {
-                            "enabled":true,
-                            "name":"Burp Infiltrator"
-                        }
-                    ],
-                    "enabled":false,
-                    "type_index":"0x00100500"
-                },
-                {
-                    "detection_methods":[
-                        {
-                            "enabled":true,
-                            "name":"Error messages"
-                        },
-                        {
-                            "enabled":true,
-                            "name":"Boolean conditions"
-                        },
-                        {
-                            "enabled":true,
-                            "name":"Burp Infiltrator"
-                        }
-                    ],
-                    "enabled":false,
-                    "type_index":"0x00100600"
-                },
-                {
                     "detection_methods":[
                         {
                             "enabled":true,
@@ -553,12 +554,17 @@
                 {
                     "detection_methods":[],
                     "enabled":false,
-                    "type_index":"0x00200400"
+                    "type_index":"0x00200500"
                 },
                 {
                     "detection_methods":[],
                     "enabled":false,
-                    "type_index":"0x00200500"
+                    "type_index":"0x00200600"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00200400"
                 },
                 {
                     "detection_methods":[
@@ -596,11 +602,6 @@
                 {
                     "detection_methods":[],
                     "enabled":false,
-                    "type_index":"0x00200600"
-                },
-                {
-                    "detection_methods":[],
-                    "enabled":false,
                     "type_index":"0x00200700"
                 },
                 {
@@ -625,7 +626,17 @@
                 {
                     "detection_methods":[],
                     "enabled":false,
+                    "type_index":"0x00200900"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
                     "type_index":"0x00200601"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00200901"
                 },
                 {
                     "detection_methods":[],
@@ -635,7 +646,27 @@
                 {
                     "detection_methods":[],
                     "enabled":false,
+                    "type_index":"0x00200902"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
                     "type_index":"0x00200603"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00200903"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00200904"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00200905"
                 },
                 {
                     "detection_methods":[],
@@ -712,6 +743,20 @@
                     ],
                     "enabled":false,
                     "type_index":"0x00200312"
+                },
+                {
+                    "detection_methods":[
+                        {
+                            "enabled":true,
+                            "name":"Javascript static analysis"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"Javascript dynamic analysis"
+                        }
+                    ],
+                    "enabled":false,
+                    "type_index":"0x00200316"
                 },
                 {
                     "detection_methods":[],
@@ -873,9 +918,18 @@
                     "type_index":"0x00500112"
                 },
                 {
-                    "detection_methods":[],
+                    "detection_methods":[
+                        {
+                            "enabled":true,
+                            "name":"Javascript static analysis"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"Javascript dynamic analysis"
+                        }
+                    ],
                     "enabled":false,
-                    "type_index":"0x00500a00"
+                    "type_index":"0x00500b00"
                 },
                 {
                     "detection_methods":[],
@@ -885,17 +939,12 @@
                 {
                     "detection_methods":[],
                     "enabled":false,
-                    "type_index":"0x00500400"
+                    "type_index":"0x00500300"
                 },
                 {
                     "detection_methods":[],
                     "enabled":false,
                     "type_index":"0x00500200"
-                },
-                {
-                    "detection_methods":[],
-                    "enabled":false,
-                    "type_index":"0x00500300"
                 },
                 {
                     "detection_methods":[],
@@ -933,6 +982,16 @@
                 {
                     "detection_methods":[],
                     "enabled":false,
+                    "type_index":"0x00500400"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00500500"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
                     "type_index":"0x00500700"
                 },
                 {
@@ -943,26 +1002,12 @@
                 {
                     "detection_methods":[],
                     "enabled":false,
-                    "type_index":"0x00500500"
+                    "type_index":"0x00500a00"
                 },
                 {
                     "detection_methods":[],
                     "enabled":false,
                     "type_index":"0x00500900"
-                },
-                {
-                    "detection_methods":[
-                        {
-                            "enabled":true,
-                            "name":"Javascript static analysis"
-                        },
-                        {
-                            "enabled":true,
-                            "name":"Javascript dynamic analysis"
-                        }
-                    ],
-                    "enabled":false,
-                    "type_index":"0x00500b00"
                 },
                 {
                     "detection_methods":[
@@ -1423,6 +1468,16 @@
                     "type_index":"0x00600600"
                 },
                 {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00600700"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00600800"
+                },
+                {
                     "detection_methods":[
                         {
                             "enabled":true,
@@ -1435,6 +1490,11 @@
                     ],
                     "enabled":false,
                     "type_index":"0x00200341"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00200141"
                 },
                 {
                     "detection_methods":[

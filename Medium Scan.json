@@ -4,6 +4,7 @@
             "consolidate_passive_issues":true,
             "follow_redirections":true,
             "maintain_session":true,
+            "maximum_crawl_and_audit_time":0,
             "scan_accuracy":"minimise_false_negatives",
             "scan_speed":"thorough",
             "skip_ineffective_checks":false

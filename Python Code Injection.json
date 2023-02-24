@@ -9,158 +9,6 @@
             "scan_speed":"thorough",
             "skip_ineffective_checks":false
         },
-        "error_handling":{
-            "consecutive_audit_check_failures_to_skip_insertion_point":2,
-            "consecutive_insertion_point_failures_to_fail_audit_item":2,
-            "number_of_follow_up_passes":1,
-            "pause_task_failed_audit_item_count":10,
-            "pause_task_failed_audit_item_percentage":0
-        },
-        "frequently_occurring_insertion_points":{
-            "quick_scan_body_params":true,
-            "quick_scan_cookies":true,
-            "quick_scan_entire_body":true,
-            "quick_scan_http_headers":true,
-            "quick_scan_param_name":true,
-            "quick_scan_url_params":true,
-            "quick_scan_url_path_filename":true,
-            "quick_scan_url_path_folders":true
-        },
-        "ignored_insertion_points":{
-            "skip_all_tests_for_parameters":[
-                {
-                    "enabled":true,
-                    "expression":"version",
-                    "item":"name",
-                    "match_type":"is",
-                    "parameter":"xml_attribute"
-                },
-                {
-                    "enabled":true,
-                    "expression":"encoding",
-                    "item":"name",
-                    "match_type":"is",
-                    "parameter":"xml_attribute"
-                },
-                {
-                    "enabled":true,
-                    "expression":"standalone",
-                    "item":"name",
-                    "match_type":"is",
-                    "parameter":"xml_attribute"
-                },
-                {
-                    "enabled":true,
-                    "expression":"xmlns.*",
-                    "item":"name",
-                    "match_type":"matches_regex",
-                    "parameter":"xml_attribute"
-                },
-                {
-                    "enabled":true,
-                    "expression":"xml:lang",
-                    "item":"name",
-                    "match_type":"is",
-                    "parameter":"xml_attribute"
-                },
-                {
-                    "enabled":true,
-                    "expression":"lang",
-                    "item":"name",
-                    "match_type":"is",
-                    "parameter":"xml_attribute"
-                }
-            ],
-            "skip_server_side_injection_for_parameters":[
-                {
-                    "enabled":true,
-                    "expression":"aspsessionid.*",
-                    "item":"name",
-                    "match_type":"matches_regex",
-                    "parameter":"cookie"
-                },
-                {
-                    "enabled":true,
-                    "expression":"asp.net_sessionid",
-                    "item":"name",
-                    "match_type":"is",
-                    "parameter":"cookie"
-                },
-                {
-                    "enabled":true,
-                    "expression":"__eventtarget",
-                    "item":"name",
-                    "match_type":"is",
-                    "parameter":"body_parameter"
-                },
-                {
-                    "enabled":true,
-                    "expression":"__eventargument",
-                    "item":"name",
-                    "match_type":"is",
-                    "parameter":"body_parameter"
-                },
-                {
-                    "enabled":true,
-                    "expression":"__viewstate",
-                    "item":"name",
-                    "match_type":"is",
-                    "parameter":"body_parameter"
-                },
-                {
-                    "enabled":true,
-                    "expression":"__eventvalidation",
-                    "item":"name",
-                    "match_type":"is",
-                    "parameter":"body_parameter"
-                },
-                {
-                    "enabled":true,
-                    "expression":"jsessionid",
-                    "item":"name",
-                    "match_type":"is",
-                    "parameter":"any_parameter"
-                },
-                {
-                    "enabled":true,
-                    "expression":"cfid",
-                    "item":"name",
-                    "match_type":"is",
-                    "parameter":"cookie"
-                },
-                {
-                    "enabled":true,
-                    "expression":"cftoken",
-                    "item":"name",
-                    "match_type":"is",
-                    "parameter":"cookie"
-                },
-                {
-                    "enabled":true,
-                    "expression":"PHPSESSID",
-                    "item":"name",
-                    "match_type":"is",
-                    "parameter":"cookie"
-                },
-                {
-                    "enabled":true,
-                    "expression":"session_id",
-                    "item":"name",
-                    "match_type":"is",
-                    "parameter":"cookie"
-                }
-            ]
-        },
-        "insertion_point_types":{
-            "insert_body_params":true,
-            "insert_cookies":true,
-            "insert_entire_body":true,
-            "insert_http_headers":true,
-            "insert_param_name":true,
-            "insert_url_params":true,
-            "insert_url_path_filename":true,
-            "insert_url_path_folders":true
-        },
         "issues_reported":{
             "scan_type_intrusive_active":true,
             "scan_type_javascript_analysis":true,
@@ -210,7 +58,7 @@
                 },
                 {
                     "detection_methods":[],
-                    "enabled":false,
+                    "enabled":true,
                     "type_index":"0x00100f10"
                 },
                 {
@@ -298,7 +146,11 @@
                     "detection_methods":[
                         {
                             "enabled":true,
-                            "name":"Boolean conditions"
+                            "name":"Error messages"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"Burp Collaborator"
                         },
                         {
                             "enabled":true,
@@ -306,7 +158,30 @@
                         }
                     ],
                     "enabled":false,
-                    "type_index":"0x00100500"
+                    "type_index":"0x00100700"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00100b00"
+                },
+                {
+                    "detection_methods":[
+                        {
+                            "enabled":true,
+                            "name":"String echo"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"Time delays"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"Burp Collaborator"
+                        }
+                    ],
+                    "enabled":false,
+                    "type_index":"0x00100c00"
                 },
                 {
                     "detection_methods":[],
@@ -364,76 +239,12 @@
                 {
                     "detection_methods":[],
                     "enabled":false,
-                    "type_index":"0x00100b00"
-                },
-                {
-                    "detection_methods":[
-                        {
-                            "enabled":true,
-                            "name":"String echo"
-                        },
-                        {
-                            "enabled":true,
-                            "name":"Time delays"
-                        },
-                        {
-                            "enabled":true,
-                            "name":"Burp Collaborator"
-                        }
-                    ],
-                    "enabled":false,
-                    "type_index":"0x00100c00"
-                },
-                {
-                    "detection_methods":[
-                        {
-                            "enabled":true,
-                            "name":"Error messages"
-                        },
-                        {
-                            "enabled":true,
-                            "name":"Burp Collaborator"
-                        },
-                        {
-                            "enabled":true,
-                            "name":"Burp Infiltrator"
-                        }
-                    ],
-                    "enabled":false,
-                    "type_index":"0x00100700"
-                },
-                {
-                    "detection_methods":[
-                        {
-                            "enabled":true,
-                            "name":"Error messages"
-                        },
-                        {
-                            "enabled":true,
-                            "name":"Boolean conditions"
-                        },
-                        {
-                            "enabled":true,
-                            "name":"Burp Infiltrator"
-                        }
-                    ],
-                    "enabled":false,
-                    "type_index":"0x00100600"
-                },
-                {
-                    "detection_methods":[],
-                    "enabled":false,
-                    "type_index":"0x00100800"
+                    "type_index":"0x00100a00"
                 },
                 {
                     "detection_methods":[],
                     "enabled":false,
                     "type_index":"0x00100900"
-                },
-                {
-                    "detection_methods":[],
-                    "enabled":false,
-                    "type_index":"0x00100a00"
                 },
                 {
                     "detection_methods":[
@@ -522,6 +333,43 @@
                     ],
                     "enabled":false,
                     "type_index":"0x00100200"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00100800"
+                },
+                {
+                    "detection_methods":[
+                        {
+                            "enabled":true,
+                            "name":"Boolean conditions"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"Burp Infiltrator"
+                        }
+                    ],
+                    "enabled":false,
+                    "type_index":"0x00100500"
+                },
+                {
+                    "detection_methods":[
+                        {
+                            "enabled":true,
+                            "name":"Error messages"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"Boolean conditions"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"Burp Infiltrator"
+                        }
+                    ],
+                    "enabled":false,
+                    "type_index":"0x00100600"
                 },
                 {
                     "detection_methods":[
@@ -918,18 +766,9 @@
                     "type_index":"0x00500112"
                 },
                 {
-                    "detection_methods":[
-                        {
-                            "enabled":true,
-                            "name":"Javascript static analysis"
-                        },
-                        {
-                            "enabled":true,
-                            "name":"Javascript dynamic analysis"
-                        }
-                    ],
+                    "detection_methods":[],
                     "enabled":false,
-                    "type_index":"0x00500b00"
+                    "type_index":"0x00500a00"
                 },
                 {
                     "detection_methods":[],
@@ -939,12 +778,17 @@
                 {
                     "detection_methods":[],
                     "enabled":false,
-                    "type_index":"0x00500300"
+                    "type_index":"0x00500400"
                 },
                 {
                     "detection_methods":[],
                     "enabled":false,
                     "type_index":"0x00500200"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00500300"
                 },
                 {
                     "detection_methods":[],
@@ -982,16 +826,6 @@
                 {
                     "detection_methods":[],
                     "enabled":false,
-                    "type_index":"0x00500400"
-                },
-                {
-                    "detection_methods":[],
-                    "enabled":false,
-                    "type_index":"0x00500500"
-                },
-                {
-                    "detection_methods":[],
-                    "enabled":false,
                     "type_index":"0x00500700"
                 },
                 {
@@ -1002,12 +836,26 @@
                 {
                     "detection_methods":[],
                     "enabled":false,
-                    "type_index":"0x00500a00"
+                    "type_index":"0x00500500"
                 },
                 {
                     "detection_methods":[],
                     "enabled":false,
                     "type_index":"0x00500900"
+                },
+                {
+                    "detection_methods":[
+                        {
+                            "enabled":true,
+                            "name":"Javascript static analysis"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"Javascript dynamic analysis"
+                        }
+                    ],
+                    "enabled":false,
+                    "type_index":"0x00500b00"
                 },
                 {
                     "detection_methods":[
@@ -1603,7 +1451,7 @@
                             "name":"String echo"
                         }
                     ],
-                    "enabled":true,
+                    "enabled":false,
                     "type_index":"0x00101080"
                 },
                 {
@@ -1653,26 +1501,6 @@
                 }
             ],
             "store_issues_within_queue_items":false
-        },
-        "javascript_analysis":{
-            "fetch_out_of_scope_resources":true,
-            "max_dynamic_time_per_item":30,
-            "max_static_time_per_item":30,
-            "request_missing_dependencies":true,
-            "use_dynamic_analysis":true,
-            "use_static_analysis":true
-        },
-        "misc_insertion_point_options":{
-            "max_insertion_points_per_base_request":30,
-            "use_nested_insertion_points":true
-        },
-        "modifying_parameter_locations":{
-            "body_to_cookie":false,
-            "body_to_url":true,
-            "cookie_to_body":false,
-            "cookie_to_url":false,
-            "url_to_body":true,
-            "url_to_cookie":false
         }
     }
 }
