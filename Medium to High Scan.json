@@ -120,11 +120,11 @@
             "insert_url_path_folders":true
         },
         "issues_reported":{
-            "scan_type_intrusive_active":false,
-            "scan_type_javascript_analysis":true,
-            "scan_type_light_active":true,
+            "scan_type_intrusive_active":true,
+            "scan_type_javascript_analysis":false,
+            "scan_type_light_active":false,
             "scan_type_medium_active":true,
-            "scan_type_passive":true,
+            "scan_type_passive":false,
             "select_individual_issues":false,
             "selected_issues":[],
             "store_issues_within_queue_items":false

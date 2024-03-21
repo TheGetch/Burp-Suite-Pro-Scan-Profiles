@@ -28,7 +28,50 @@
             "quick_scan_url_path_folders":true
         },
         "ignored_insertion_points":{
-            "skip_all_tests_for_parameters":[],
+            "skip_all_tests_for_parameters":[
+                {
+                    "enabled":true,
+                    "expression":"version",
+                    "item":"name",
+                    "match_type":"is",
+                    "parameter":"xml_attribute"
+                },
+                {
+                    "enabled":true,
+                    "expression":"encoding",
+                    "item":"name",
+                    "match_type":"is",
+                    "parameter":"xml_attribute"
+                },
+                {
+                    "enabled":true,
+                    "expression":"standalone",
+                    "item":"name",
+                    "match_type":"is",
+                    "parameter":"xml_attribute"
+                },
+                {
+                    "enabled":true,
+                    "expression":"xmlns.*",
+                    "item":"name",
+                    "match_type":"matches_regex",
+                    "parameter":"xml_attribute"
+                },
+                {
+                    "enabled":true,
+                    "expression":"xml:lang",
+                    "item":"name",
+                    "match_type":"is",
+                    "parameter":"xml_attribute"
+                },
+                {
+                    "enabled":true,
+                    "expression":"lang",
+                    "item":"name",
+                    "match_type":"is",
+                    "parameter":"xml_attribute"
+                }
+            ],
             "skip_server_side_injection_for_parameters":[
                 {
                     "enabled":true,
@@ -120,7 +163,7 @@
             "insert_url_path_folders":true
         },
         "issues_reported":{
-            "scan_type_intrusive_active":false,
+            "scan_type_intrusive_active":true,
             "scan_type_javascript_analysis":true,
             "scan_type_light_active":true,
             "scan_type_medium_active":true,

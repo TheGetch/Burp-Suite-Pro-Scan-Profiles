@@ -120,13 +120,33 @@
             "insert_url_path_folders":true
         },
         "issues_reported":{
-            "scan_type_intrusive_active":false,
+            "scan_type_intrusive_active":true,
             "scan_type_javascript_analysis":true,
             "scan_type_light_active":true,
             "scan_type_medium_active":true,
             "scan_type_passive":true,
-            "select_individual_issues":false,
-            "selected_issues":[],
+            "select_individual_issues":true,
+            "selected_issues":[
+                {
+                    "detection_methods":[
+                        {
+                            "enabled":true,
+                            "name":"Time delays"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"Back-end socket poisoning"
+                        }
+                    ],
+                    "enabled":false,
+                    "type_index":"0x00200140"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00200141"
+                }
+            ],
             "store_issues_within_queue_items":false
         },
         "javascript_analysis":{

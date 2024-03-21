@@ -10,11 +10,15 @@
             "scan_speed":"thorough",
             "skip_ineffective_checks":false
         },
+        "audit_project_option_overrides":{
+            "connect_timeout":-1,
+            "normal_timeout":-1
+        },
         "error_handling":{
             "consecutive_audit_check_failures_to_skip_insertion_point":2,
             "consecutive_insertion_point_failures_to_fail_audit_item":2,
             "number_of_follow_up_passes":1,
-            "pause_task_failed_audit_item_count":10,
+            "pause_task_failed_audit_item_count":60,
             "pause_task_failed_audit_item_percentage":0
         },
         "frequently_occurring_insertion_points":{
@@ -70,6 +74,48 @@
                     "item":"name",
                     "match_type":"is",
                     "parameter":"xml_attribute"
+                },
+                {
+                    "enabled":true,
+                    "expression":"_ga",
+                    "item":"name",
+                    "match_type":"is",
+                    "parameter":"cookie"
+                },
+                {
+                    "enabled":true,
+                    "expression":"_gid",
+                    "item":"name",
+                    "match_type":"is",
+                    "parameter":"cookie"
+                },
+                {
+                    "enabled":true,
+                    "expression":"_gat",
+                    "item":"name",
+                    "match_type":"is",
+                    "parameter":"cookie"
+                },
+                {
+                    "enabled":true,
+                    "expression":"_ga_.*",
+                    "item":"name",
+                    "match_type":"matches_regex",
+                    "parameter":"cookie"
+                },
+                {
+                    "enabled":true,
+                    "expression":"_gac_.*",
+                    "item":"name",
+                    "match_type":"matches_regex",
+                    "parameter":"cookie"
+                },
+                {
+                    "enabled":true,
+                    "expression":"AWSALB.*",
+                    "item":"name",
+                    "match_type":"matches_regex",
+                    "parameter":"cookie"
                 }
             ],
             "skip_server_side_injection_for_parameters":[
@@ -265,6 +311,20 @@
                     ],
                     "enabled":false,
                     "type_index":"0x08000000"
+                },
+                {
+                    "detection_methods":[
+                        {
+                            "enabled":true,
+                            "name":"Passive checks"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"Active checks"
+                        }
+                    ],
+                    "enabled":false,
+                    "type_index":"0x09000000"
                 },
                 {
                     "detection_methods":[
@@ -567,7 +627,7 @@
                 },
                 {
                     "detection_methods":[],
-                    "enabled":true,
+                    "enabled":false,
                     "type_index":"0x00200600"
                 },
                 {
@@ -619,6 +679,11 @@
                     "type_index":"0x00200800"
                 },
                 {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00200900"
+                },
+                {
                     "detection_methods":[
                         {
                             "enabled":true,
@@ -635,11 +700,6 @@
                 {
                     "detection_methods":[],
                     "enabled":false,
-                    "type_index":"0x00200900"
-                },
-                {
-                    "detection_methods":[],
-                    "enabled":true,
                     "type_index":"0x00200601"
                 },
                 {
@@ -649,7 +709,7 @@
                 },
                 {
                     "detection_methods":[],
-                    "enabled":true,
+                    "enabled":false,
                     "type_index":"0x00200602"
                 },
                 {
@@ -659,7 +719,7 @@
                 },
                 {
                     "detection_methods":[],
-                    "enabled":true,
+                    "enabled":false,
                     "type_index":"0x00200603"
                 },
                 {
@@ -704,6 +764,11 @@
                 {
                     "detection_methods":[],
                     "enabled":false,
+                    "type_index":"0x00200510"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
                     "type_index":"0x00300100"
                 },
                 {
@@ -722,13 +787,8 @@
                 },
                 {
                     "detection_methods":[],
-                    "enabled":false,
+                    "enabled":true,
                     "type_index":"0x00600550"
-                },
-                {
-                    "detection_methods":[],
-                    "enabled":false,
-                    "type_index":"0x00200510"
                 },
                 {
                     "detection_methods":[
@@ -794,8 +854,8 @@
                 },
                 {
                     "detection_methods":[],
-                    "enabled":false,
-                    "type_index":"0x00400200"
+                    "enabled":true,
+                    "type_index":"0x00400400"
                 },
                 {
                     "detection_methods":[],
@@ -804,27 +864,8 @@
                 },
                 {
                     "detection_methods":[],
-                    "enabled":false,
-                    "type_index":"0x00400600"
-                },
-                {
-                    "detection_methods":[],
-                    "enabled":false,
-                    "type_index":"0x00400300"
-                },
-                {
-                    "detection_methods":[
-                        {
-                            "enabled":true,
-                            "name":"Javascript static analysis"
-                        },
-                        {
-                            "enabled":true,
-                            "name":"Javascript dynamic analysis"
-                        }
-                    ],
-                    "enabled":false,
-                    "type_index":"0x00200360"
+                    "enabled":true,
+                    "type_index":"0x00400200"
                 },
                 {
                     "detection_methods":[
@@ -841,14 +882,33 @@
                     "type_index":"0x00100850"
                 },
                 {
+                    "detection_methods":[
+                        {
+                            "enabled":true,
+                            "name":"Javascript static analysis"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"Javascript dynamic analysis"
+                        }
+                    ],
+                    "enabled":false,
+                    "type_index":"0x00200360"
+                },
+                {
                     "detection_methods":[],
                     "enabled":false,
                     "type_index":"0x00400100"
                 },
                 {
                     "detection_methods":[],
+                    "enabled":true,
+                    "type_index":"0x00400300"
+                },
+                {
+                    "detection_methods":[],
                     "enabled":false,
-                    "type_index":"0x00400400"
+                    "type_index":"0x00400600"
                 },
                 {
                     "detection_methods":[],
@@ -981,7 +1041,7 @@
                 },
                 {
                     "detection_methods":[],
-                    "enabled":false,
+                    "enabled":true,
                     "type_index":"0x00500800"
                 },
                 {
@@ -1054,7 +1114,7 @@
                 },
                 {
                     "detection_methods":[],
-                    "enabled":false,
+                    "enabled":true,
                     "type_index":"0x00500900"
                 },
                 {
@@ -1502,12 +1562,12 @@
                 },
                 {
                     "detection_methods":[],
-                    "enabled":false,
+                    "enabled":true,
                     "type_index":"0x00600400"
                 },
                 {
                     "detection_methods":[],
-                    "enabled":false,
+                    "enabled":true,
                     "type_index":"0x00600500"
                 },
                 {
@@ -1522,8 +1582,13 @@
                 },
                 {
                     "detection_methods":[],
-                    "enabled":false,
+                    "enabled":true,
                     "type_index":"0x00600800"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00200141"
                 },
                 {
                     "detection_methods":[
@@ -1538,11 +1603,6 @@
                     ],
                     "enabled":false,
                     "type_index":"0x00200341"
-                },
-                {
-                    "detection_methods":[],
-                    "enabled":false,
-                    "type_index":"0x00200141"
                 },
                 {
                     "detection_methods":[
@@ -1708,7 +1768,7 @@
             "max_static_time_per_item":30,
             "request_missing_dependencies":true,
             "use_dynamic_analysis":true,
-            "use_static_analysis":true
+            "use_static_analysis":false
         },
         "misc_insertion_point_options":{
             "max_insertion_points_per_base_request":30,

@@ -4,6 +4,7 @@
             "consolidate_passive_issues":true,
             "follow_redirections":true,
             "maintain_session":true,
+            "max_items_in_progress":10,
             "maximum_crawl_and_audit_time":0,
             "scan_accuracy":"minimise_false_negatives",
             "scan_speed":"thorough",
@@ -160,6 +161,10 @@
                         {
                             "enabled":true,
                             "name":"Burp Collaborator"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"PostgreSQL specific"
                         }
                     ],
                     "enabled":false,
@@ -255,11 +260,7 @@
                     "detection_methods":[
                         {
                             "enabled":true,
-                            "name":"Error messages"
-                        },
-                        {
-                            "enabled":true,
-                            "name":"Burp Collaborator"
+                            "name":"Boolean conditions"
                         },
                         {
                             "enabled":true,
@@ -267,30 +268,7 @@
                         }
                     ],
                     "enabled":false,
-                    "type_index":"0x00100700"
-                },
-                {
-                    "detection_methods":[],
-                    "enabled":false,
-                    "type_index":"0x00100b00"
-                },
-                {
-                    "detection_methods":[
-                        {
-                            "enabled":true,
-                            "name":"String echo"
-                        },
-                        {
-                            "enabled":true,
-                            "name":"Time delays"
-                        },
-                        {
-                            "enabled":true,
-                            "name":"Burp Collaborator"
-                        }
-                    ],
-                    "enabled":false,
-                    "type_index":"0x00100c00"
+                    "type_index":"0x00100500"
                 },
                 {
                     "detection_methods":[],
@@ -348,12 +326,76 @@
                 {
                     "detection_methods":[],
                     "enabled":false,
-                    "type_index":"0x00100a00"
+                    "type_index":"0x00100b00"
+                },
+                {
+                    "detection_methods":[
+                        {
+                            "enabled":true,
+                            "name":"String echo"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"Time delays"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"Burp Collaborator"
+                        }
+                    ],
+                    "enabled":false,
+                    "type_index":"0x00100c00"
+                },
+                {
+                    "detection_methods":[
+                        {
+                            "enabled":true,
+                            "name":"Error messages"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"Burp Collaborator"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"Burp Infiltrator"
+                        }
+                    ],
+                    "enabled":false,
+                    "type_index":"0x00100700"
+                },
+                {
+                    "detection_methods":[
+                        {
+                            "enabled":true,
+                            "name":"Error messages"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"Boolean conditions"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"Burp Infiltrator"
+                        }
+                    ],
+                    "enabled":false,
+                    "type_index":"0x00100600"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00100800"
                 },
                 {
                     "detection_methods":[],
                     "enabled":false,
                     "type_index":"0x00100900"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00100a00"
                 },
                 {
                     "detection_methods":[
@@ -438,47 +480,14 @@
                         {
                             "enabled":true,
                             "name":"Burp Infiltrator"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"PostgreSQL specific"
                         }
                     ],
                     "enabled":false,
                     "type_index":"0x00100200"
-                },
-                {
-                    "detection_methods":[],
-                    "enabled":false,
-                    "type_index":"0x00100800"
-                },
-                {
-                    "detection_methods":[
-                        {
-                            "enabled":true,
-                            "name":"Boolean conditions"
-                        },
-                        {
-                            "enabled":true,
-                            "name":"Burp Infiltrator"
-                        }
-                    ],
-                    "enabled":false,
-                    "type_index":"0x00100500"
-                },
-                {
-                    "detection_methods":[
-                        {
-                            "enabled":true,
-                            "name":"Error messages"
-                        },
-                        {
-                            "enabled":true,
-                            "name":"Boolean conditions"
-                        },
-                        {
-                            "enabled":true,
-                            "name":"Burp Infiltrator"
-                        }
-                    ],
-                    "enabled":false,
-                    "type_index":"0x00100600"
                 },
                 {
                     "detection_methods":[
@@ -674,6 +683,11 @@
                     "type_index":"0x00600550"
                 },
                 {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00200510"
+                },
+                {
                     "detection_methods":[
                         {
                             "enabled":true,
@@ -686,6 +700,11 @@
                     ],
                     "enabled":true,
                     "type_index":"0x00200311"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00200511"
                 },
                 {
                     "detection_methods":[
@@ -702,6 +721,21 @@
                     "type_index":"0x00200312"
                 },
                 {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00200512"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00200513"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00200514"
+                },
+                {
                     "detection_methods":[
                         {
                             "enabled":true,
@@ -714,6 +748,11 @@
                     ],
                     "enabled":false,
                     "type_index":"0x00200316"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00400200"
                 },
                 {
                     "detection_methods":[],
@@ -745,14 +784,23 @@
                     "type_index":"0x00200360"
                 },
                 {
-                    "detection_methods":[],
+                    "detection_methods":[
+                        {
+                            "enabled":true,
+                            "name":"Response diffing"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"In-band"
+                        }
+                    ],
                     "enabled":false,
-                    "type_index":"0x00400100"
+                    "type_index":"0x00100850"
                 },
                 {
                     "detection_methods":[],
                     "enabled":false,
-                    "type_index":"0x00400200"
+                    "type_index":"0x00400100"
                 },
                 {
                     "detection_methods":[],
@@ -875,9 +923,18 @@
                     "type_index":"0x00500112"
                 },
                 {
-                    "detection_methods":[],
+                    "detection_methods":[
+                        {
+                            "enabled":true,
+                            "name":"Javascript static analysis"
+                        },
+                        {
+                            "enabled":true,
+                            "name":"Javascript dynamic analysis"
+                        }
+                    ],
                     "enabled":false,
-                    "type_index":"0x00500a00"
+                    "type_index":"0x00500b00"
                 },
                 {
                     "detection_methods":[],
@@ -887,17 +944,12 @@
                 {
                     "detection_methods":[],
                     "enabled":false,
-                    "type_index":"0x00500400"
+                    "type_index":"0x00500300"
                 },
                 {
                     "detection_methods":[],
                     "enabled":false,
                     "type_index":"0x00500200"
-                },
-                {
-                    "detection_methods":[],
-                    "enabled":false,
-                    "type_index":"0x00500300"
                 },
                 {
                     "detection_methods":[],
@@ -935,12 +987,7 @@
                 {
                     "detection_methods":[],
                     "enabled":false,
-                    "type_index":"0x00500700"
-                },
-                {
-                    "detection_methods":[],
-                    "enabled":false,
-                    "type_index":"0x00500600"
+                    "type_index":"0x00500400"
                 },
                 {
                     "detection_methods":[],
@@ -950,21 +997,22 @@
                 {
                     "detection_methods":[],
                     "enabled":false,
-                    "type_index":"0x00500900"
+                    "type_index":"0x00500700"
                 },
                 {
-                    "detection_methods":[
-                        {
-                            "enabled":true,
-                            "name":"Javascript static analysis"
-                        },
-                        {
-                            "enabled":true,
-                            "name":"Javascript dynamic analysis"
-                        }
-                    ],
+                    "detection_methods":[],
                     "enabled":false,
-                    "type_index":"0x00500b00"
+                    "type_index":"0x00500600"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00500a00"
+                },
+                {
+                    "detection_methods":[],
+                    "enabled":false,
+                    "type_index":"0x00500900"
                 },
                 {
                     "detection_methods":[
